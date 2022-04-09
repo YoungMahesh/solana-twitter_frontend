@@ -86,7 +86,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Solana</title>
+        <title>Solana Twitter</title>
         <meta name="description" content="D-app on solana" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -120,10 +120,20 @@ export default function Home() {
               Tweet
             </Button>
           </Stack>
-          <Box>
-            <Typography variant="h5">Recent Tweets</Typography>
+          <Typography variant="h5">Recent Tweets</Typography>
+          <Box sx={{ display: "flex", flexWrap: "wrap" }}>
             {tweetList.map((el, idx) => (
-              <Box key={idx}>
+              <Box
+                key={idx}
+                sx={{
+                  width: "300px",
+                  padding: "5px",
+                  margin: "10px",
+                  wordBreak: "break-all",
+                  borderRadius: "7px",
+                  border: "1px solid blue",
+                }}
+              >
                 <Typography variant="h6">Title: {el.account.topic}</Typography>
                 <Typography>Content: {el.account.content}</Typography>
                 <Typography>Author: {el.account.author.toString()}</Typography>
